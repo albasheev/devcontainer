@@ -3,7 +3,7 @@ ARG UBUNTU_VERSION=26.04
 
 FROM nvidia/cuda:${CUDA_VERSION}-devel-ubuntu${UBUNTU_VERSION}
 
-RUN apt update && apt install -y \
+RUN apt-get update && apt-get install -y \
     git \
     clangd-22 \
     cmake \
