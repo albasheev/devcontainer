@@ -1,0 +1,24 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": [
+        "--gpus=all",
+        "--cap-add=SYS_PTRACE"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "cmake.configureSettings": {
+                    "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                    "CMAKE_LINKER_TYPE": "MOLD"
+                }
+            },
+            "extensions": [
+                "ms-vscode.cmake-tools",
+                "nvidia.nsight-vscode-edition",
+                "llvm-vs-code-extensions.vscode-clangd"
+            ]
+        }
+    }
+}
