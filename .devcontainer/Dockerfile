@@ -5,12 +5,12 @@ FROM nvidia/cuda:${CUDA_VERSION}-devel-ubuntu${UBUNTU_VERSION}
 
 RUN apt update && apt install -y \
     git \
-    clangd \
+    clangd-22 \
     cmake \
     ccache \
     ninja-build \
     mold \
-    clang \
+    clang-22 \
     nano
 
 ENV CMAKE_GENERATOR="Ninja" \
