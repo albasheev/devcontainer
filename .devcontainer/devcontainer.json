@@ -8,12 +8,6 @@
     ],
     "customizations": {
         "vscode": {
-            "settings": {
-                "cmake.configureSettings": {
-                    "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-                    "CMAKE_LINKER_TYPE": "MOLD"
-                }
-            },
             "extensions": [
                 "ms-vscode.cmake-tools",
                 "nvidia.nsight-vscode-edition",
