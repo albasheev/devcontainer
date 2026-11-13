@@ -11,16 +11,19 @@ RUN apt-get update && apt-get install -y \
     ninja-build \
     mold \
     clang-22 \
-    nano
+    nano && \
+    update-alternatives --install /usr/bin/clang clang /usr/bin/clang-22 100 && \
+    update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-22 100 && \
+    update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-22 100
 
 ENV CMAKE_GENERATOR="Ninja" \
-CC="clang-22" \
-CXX="clang++-22" \
-CUDAHOSTCXX="clang++-22" \
-CMAKE_C_COMPILER_LAUNCHER="ccache" \
-CMAKE_CXX_COMPILER_LAUNCHER="ccache" \
-CMAKE_CUDA_COMPILER_LAUNCHER="ccache" \
-CMAKE_EXPORT_COMPILE_COMMANDS="ON" \
-LDFLAGS="-fuse-ld=mold"
+    CC="clang" \
+    CXX="clang++" \
+    CUDAHOSTCXX="clang++" \
+    CMAKE_C_COMPILER_LAUNCHER="ccache" \
+    CMAKE_CXX_COMPILER_LAUNCHER="ccache" \
+    CMAKE_CUDA_COMPILER_LAUNCHER="ccache" \
+    CMAKE_EXPORT_COMPILE_COMMANDS="ON" \
+    LDFLAGS="-fuse-ld=mold"
 
 WORKDIR /workspaces
