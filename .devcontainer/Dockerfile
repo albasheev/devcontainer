@@ -14,12 +14,13 @@ RUN apt-get update && apt-get install -y \
     nano
 
 ENV CMAKE_GENERATOR="Ninja" \
-CC="clang" \
-CXX="clang++" \
-CUDAHOSTCXX="clang++" \
+CC="clang-22" \
+CXX="clang++-22" \
+CUDAHOSTCXX="clang++-22" \
 CMAKE_C_COMPILER_LAUNCHER="ccache" \
 CMAKE_CXX_COMPILER_LAUNCHER="ccache" \
 CMAKE_CUDA_COMPILER_LAUNCHER="ccache" \
-CMAKE_EXPORT_COMPILE_COMMANDS="ON"
+CMAKE_EXPORT_COMPILE_COMMANDS="ON" \
+LDFLAGS="-fuse-ld=mold"
 
 WORKDIR /workspaces
