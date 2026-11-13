@@ -7,7 +7,7 @@ RUN apt update && apt install -y \
     git \
     clangd \
     cmake \
-    sccache \
+    ccache \
     ninja-build \
     mold \
     clang \
@@ -17,9 +17,9 @@ ENV CMAKE_GENERATOR="Ninja" \
 CC="clang" \
 CXX="clang++" \
 CUDAHOSTCXX="clang++" \
-CMAKE_C_COMPILER_LAUNCHER="sccache" \
-CMAKE_CXX_COMPILER_LAUNCHER="sccache" \
-CMAKE_CUDA_COMPILER_LAUNCHER="sccache" \
+CMAKE_C_COMPILER_LAUNCHER="ccache" \
+CMAKE_CXX_COMPILER_LAUNCHER="ccache" \
+CMAKE_CUDA_COMPILER_LAUNCHER="ccache" \
 CMAKE_EXPORT_COMPILE_COMMANDS="ON"
 
 WORKDIR /workspaces
