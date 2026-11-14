@@ -25,5 +25,3 @@ ENV CMAKE_GENERATOR="Ninja" \
     CMAKE_CUDA_COMPILER_LAUNCHER="ccache" \
     CMAKE_EXPORT_COMPILE_COMMANDS="ON" \
     LDFLAGS="-fuse-ld=mold"
-
-WORKDIR /workspaces
